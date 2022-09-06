@@ -1,0 +1,16 @@
+@import "normalize.scss";
+@import "reset.scss";
+@import "typography.scss";
+
+:root {
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
+html, body {
+  height: 100%;
+}
+
+#__next {
+  height: 100%;
+}
