@@ -18,9 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <Provider container={container}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
       <ModalsContainer />
     </Provider>
   );

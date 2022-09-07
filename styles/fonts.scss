@@ -1,6 +1,43 @@
+@font-face {
+  font-family: "Namu-zero";
+  src: url("/fonts/namu/namu1400.woff2") format("woff2"),
+  url("/fonts/namu/namu1400.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Namu-thirty";
+  src: url("/fonts/namu/namu1930.woff2") format("woff2"),
+  url("/fonts/namu/namu1930.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Namu-sixty";
+  src: url("/fonts/namu/namu1960.woff2") format("woff2"),
+  url("/fonts/namu/namu1960.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 //@font-face {
-//  font-family: "Nunito";
-//  src: url("/fonts/nunito/Nunito-Bold.ttf") format("truetype");
+//  font-family: "Nanu";
+//  src: url("/fonts/namu/namu1930.woff2") format("woff2"),
+//  url("/fonts/namu/NAMU-1938.woff") format("woff");
+//  font-weight: 700;
+//  font-style: normal;
+//  font-display: swap;
+//}
+//
+//@font-face {
+//  font-family: "Nanu";
+//  src: url("/fonts/namu/namu1960.woff2") format("woff2"),
+//  url("/fonts/namu/namu1960.woff") format("woff");
 //  font-weight: 700;
 //  font-style: normal;
 //  font-display: swap;

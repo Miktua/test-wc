@@ -3,14 +3,33 @@
 @import "typography.scss";
 
 :root {
-  --black: #000000;
-  --white: #FFFFFF;
+  --text-primary: #FFFFFF;
+  --text-secondary: #000000;
+  --text-light: #707070;
+  --caption: #B6B6B6;
+  --accent: #FAE992;
+  --main: #1D1D1D;
+  --header-text: #171717;
+  --secondary: #74C1EF;
 }
 
 html, body {
   height: 100%;
 }
 
-#__next {
-  height: 100%;
+html * {
+  transition-duration: .3s;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

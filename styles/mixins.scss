@@ -1,0 +1,30 @@
+@mixin textGradient() {
+  background: linear-gradient(180deg, #FAE992 19.7%, #74C1EF 100%);
+}
+
+@mixin bgBlur() {
+  background: rgba(217, 217, 217, 0.1);
+  backdrop-filter: blur(11.0112px);
+}
+
+@mixin fontZero() {
+  font-family: 'Namu-zero', sans-serif;
+}
+
+@mixin fontThirty() {
+  font-family: 'Namu-thirty', sans-serif;
+}
+
+@mixin fontSixty() {
+  font-family: 'Namu-sixty', sans-serif;
+}
+
+@mixin states() {
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

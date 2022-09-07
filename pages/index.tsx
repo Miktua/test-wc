@@ -5,13 +5,15 @@ import { observer } from "mobx-react";
 import type { NextPage } from "next";
 import { UserStore } from "../stores/UserStore";
 import styles from "../styles/Home.module.scss";
+import Header from "../layout/Header";
+import { HeroBlock } from "../components";
 
 const Home: NextPage = observer((props) => {
   const store = useInjection(UserStore);
 
   return (
     <div className={classNames(styles.container, styles.main)}>
-      <h1>Hello</h1>
+      <HeroBlock />
     </div>
   );
 });
