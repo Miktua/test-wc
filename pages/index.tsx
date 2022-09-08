@@ -12,7 +12,7 @@ import Footer from "../layout/Footer";
 import "swiper/css";
 
 const Home: NextPage = observer(() => {
-  const store = useInjection(UserStore);
+  const userStore = useInjection(UserStore);
 
   return (
     <Swiper
@@ -24,6 +24,8 @@ const Home: NextPage = observer(() => {
       observeParents
       modules={[Mousewheel]}
       speed={800}
+      allowSlideNext={userStore?.currentStep === 0}
+      allowSlidePrev={userStore?.currentStep === 0}
     >
       <SwiperSlide>
         <HeroBlock />

@@ -5,5 +5,6 @@ export interface ButtonProps
     HTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
+  type?: "submit" | "button";
   className?: string;
 }
