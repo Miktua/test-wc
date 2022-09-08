@@ -4,8 +4,11 @@ import styles from "./HeroBlock.module.scss";
 import { HeroBlockProps } from "./HeroBlock.props";
 import Header from "../../layout/Header";
 import ArrowDownIcon from "../../public/images/icons/arrowDown.svg";
+import { useSwiper } from "swiper/react";
 
 function HeroBlock({ className, ...props }: HeroBlockProps): JSX.Element {
+  const swiper = useSwiper();
+
   return (
     <section className={classnames(styles.root, className)} {...props}>
       <Header className={styles.header} />
@@ -30,7 +33,12 @@ function HeroBlock({ className, ...props }: HeroBlockProps): JSX.Element {
             Another Dev (2022)
           </small>
         </div>
-        <button className={styles.nextSlideButton} type="button">
+        <button
+          id="swiper-forward"
+          className={styles.nextSlideButton}
+          type="button"
+          onClick={() => swiper.slideNext()}
+        >
           <ArrowDownIcon />
           <span className="visually-hidden">Next slide</span>
         </button>

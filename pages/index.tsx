@@ -3,20 +3,38 @@ import classNames from "classnames";
 import { useInjection } from "inversify-react";
 import { observer } from "mobx-react";
 import type { NextPage } from "next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel } from "swiper";
 import { UserStore } from "../stores/UserStore";
 import styles from "../styles/Home.module.scss";
 import { HeroBlock, MapBlock } from "../components";
 import Footer from "../layout/Footer";
+import "swiper/css";
 
 const Home: NextPage = observer(() => {
   const store = useInjection(UserStore);
 
   return (
-    <div className={classNames(styles.container, styles.main)}>
-      <HeroBlock />
-      <MapBlock />
-      <Footer />
-    </div>
+    <Swiper
+      className="mySwiper"
+      direction="vertical"
+      mousewheel={{ sensitivity: 1 }}
+      slidesPerView={1}
+      observer
+      observeParents
+      modules={[Mousewheel]}
+      speed={800}
+    >
+      <SwiperSlide>
+        <HeroBlock />
+      </SwiperSlide>
+      <SwiperSlide>
+        <MapBlock />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Footer />
+      </SwiperSlide>
+    </Swiper>
   );
 });
 
