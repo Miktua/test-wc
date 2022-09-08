@@ -8,7 +8,7 @@ import ArrowDownIcon from "../../public/images/icons/arrowDown.svg";
 function HeroBlock({ className, ...props }: HeroBlockProps): JSX.Element {
   return (
     <section className={classnames(styles.root, className)} {...props}>
-      <Header />
+      <Header className={styles.header} />
       <div className={styles.content}>
         <h1 className={styles.title}>RÍDNE MISTO</h1>
         <div className={styles.descriptionContainer}>
