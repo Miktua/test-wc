@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import classnames from "classnames";
 import styles from "./MapBlock.module.scss";
 import { MapBlockProps } from "./MapBlock.props";
+import { RadioList, Steps } from "../index";
+
+export type TCity = Record<"title" | "value", string>;
+export type TSteps = 0 | 1 | 2 | 3;
 
 function MapBlock({ className, ...props }: MapBlockProps): JSX.Element {
-  const cities = [
+  const cities: TCity[] = [
     {
       title: "Vinnytsia",
       value: "vinnytsia",
@@ -19,32 +23,26 @@ function MapBlock({ className, ...props }: MapBlockProps): JSX.Element {
     },
   ];
 
+  const [selectedCity, setSelectedCity] = useState<TCity | null>(null);
+  const [currentStep, setCurrentStep] = useState<TSteps>(1);
+
   return (
     <section className={classnames(styles.root, className)} {...props}>
+      {selectedCity && (
+        <Steps currentStep={currentStep} selectedCity={selectedCity} />
+      )}
+
       <h2 className={styles.title}>MÁPA MÍST</h2>
       <div className={styles.content}>
-        <div className={styles.citySelect}>
-          <p className={styles.actionTitle}>Select city location:</p>
-          <ul className={styles.citiesList}>
-            {cities.map((city) => (
-              <li className={styles.city}>
-                <input
-                  className={classnames(styles.cityRadio, "visually-hidden")}
-                  id={city.value}
-                  type="radio"
-                  name="city"
-                />
-                <label
-                  className={styles.cityLabel}
-                  htmlFor={city.value}
-                  id={city.value}
-                >
-                  {city.title}
-                </label>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <RadioList
+          selected={selectedCity}
+          setSelected={setSelectedCity}
+          values={cities}
+          name="city"
+          title="Select city location:"
+          size="md"
+          color="gold"
+        />
       </div>
     </section>
   );

@@ -1,0 +1,17 @@
+@import "styles/mixins";
+
+.root {
+  margin: auto;
+  max-width: 751px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+}
+
+.cityTitle {
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  @include fontThirty;
+}

@@ -1,0 +1,27 @@
+@import "styles/mixins";
+
+.root {
+  z-index: 10;
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  min-height: 800px;
+  left: 0;
+  top: 0;
+  background-color: var(--main);
+  padding: 30px 80px 110px 80px;
+  color: var(--text-primary);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  @include states();
+}
+
+.fullScreen {
+  width: 100vw;
+  @include bgTransparent();
+}

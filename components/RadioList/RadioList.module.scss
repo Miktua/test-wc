@@ -1,0 +1,95 @@
+@import "styles/mixins";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 100px;
+}
+
+.actionTitle {
+  color: var(--accent);
+  font-size: 25px;
+  line-height: 31px;
+  @include fontSixty();
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.itemLabel {
+  position: relative;
+  color: var(--text-primary);
+  font-size: 40px;
+  line-height: 48px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  @include states();
+
+  &:before {
+    content: "";
+    height: 22px;
+    width: 22px;
+    border: 2px solid var(--text-primary);
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+
+  &:after {
+    display: none;
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 35px;
+    height: 8px;
+    width: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    //margin-top: 10px;
+  }
+}
+
+.itemRadio:checked + .itemLabel:after {
+  display: block;
+}
+
+.white {
+  .actionTitle {
+    color: var(--text-primary);
+  }
+}
+
+.small {
+  .itemLabel {
+    font-size: 18px;
+    line-height: 22px;
+    gap: 10px;
+
+    &:before {
+      height: 15px;
+      width: 15px;
+      margin-top: 2px;
+    }
+
+    &:after {
+      left: 15px;
+      top: 19px;
+      height: 5px;
+      width: 5px;
+    }
+  }
+
+  .actionTitle {
+    text-align: center;
+  }
+
+  .list {
+    margin: 0 auto;
+  }
+}

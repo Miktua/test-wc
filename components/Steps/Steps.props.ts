@@ -1,0 +1,9 @@
+import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { TCity, TSteps } from "../MapBlock";
+
+export interface StepsProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  currentStep: TSteps;
+  selectedCity: TCity | null;
+  className?: string;
+}

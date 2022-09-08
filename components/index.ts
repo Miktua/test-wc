@@ -1,4 +1,10 @@
 export { default as HeroBlock } from "./HeroBlock";
 export { default as ConnectWallet } from "./ConnectWallet";
 export { default as NavBar } from "./NavBar";
-export { default as MapBlock } from './MapBlock'
+export { default as MapBlock } from "./MapBlock";
+export { default as Steps } from "./Steps";
+export { default as FirstStep } from "./FirstStep";
+export { default as Button } from "./Button";
+export { default as SecondStep } from "./SecondStep";
+export { default as RadioList } from "./RadioList";
+export { default as ThirdStep } from './ThirdStep'
