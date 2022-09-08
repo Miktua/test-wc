@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/globals.scss";
 import type { AppProps } from "next/app";
-import { useEffect } from "react";
 import { Provider } from "inversify-react";
 import { RootStore } from "../stores/RootStore";
 import { ModalsContainer } from "../modals";
@@ -18,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <Provider container={container}>
-      <Component {...pageProps} />
+      {React.createElement(Component, { ...pageProps })}
       <ModalsContainer />
     </Provider>
   );
