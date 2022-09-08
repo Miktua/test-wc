@@ -20,7 +20,10 @@ const Steps = observer(
 
     const onBackClick = () => {
       if (userStore?.currentStep !== 3) {
-        userStore?.decStep();
+        // userStore?.decStep();
+        userStore?.setStep(0);
+        userStore?.setCity(null);
+        userStore?.setFund(null);
       } else {
         userStore?.setStep(0);
         userStore?.setCity(null);
@@ -30,6 +33,9 @@ const Steps = observer(
 
     return (
       <div
+        style={{
+          left: currentStep === 0? '-50vw' : ''
+        }}
         className={classnames(styles.root, className, {
           [styles.fullScreen]: currentStep === 3,
         })}

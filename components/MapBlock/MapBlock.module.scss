@@ -14,6 +14,7 @@
   @include textGradient();
   @include fontZero();
   margin: 0 auto 90px;
+  transition: all .3s ease-in-out;
 }
 
 .content {

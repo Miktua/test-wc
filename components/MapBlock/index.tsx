@@ -6,6 +6,7 @@ import styles from "./MapBlock.module.scss";
 import { MapBlockProps } from "./MapBlock.props";
 import { RadioList, Steps } from "../index";
 import { UserStore } from "../../stores/UserStore";
+import Map from "../Map";
 
 export type TCity = Record<"title" | "value", string>;
 export type TSteps = 0 | 1 | 2 | 3;
@@ -34,18 +35,20 @@ const MapBlock = observer(
       userStore?.incStep();
     };
 
+
     return (
       <section className={classnames(styles.root, className)} {...props}>
-        {userStore?.currentStep !== 0 && (
+        {/* {userStore?.currentStep !== 0 && ( */}
           <Steps
             currentStep={userStore?.currentStep}
             selectedCity={userStore?.selectedCity}
           />
-        )}
+        {/* )} */}
 
-        {userStore?.currentStep === 0 && (
-          <h2 className={styles.title}>MÁPA MÍST</h2>
-        )}
+        <h2 style={{
+          visibility: userStore.currentStep===0? 'visible' : 'hidden',
+          opacity: userStore.currentStep===0? 1 : 0
+        }} className={styles.title}>MÁPA MÍST</h2>
         <div className={styles.content}>
           <RadioList
             selected={userStore?.selectedCity}
@@ -56,6 +59,8 @@ const MapBlock = observer(
             size="md"
             color="gold"
           />
+          <Map />
+          {/* 24 киев, 6 донек, 20 винница */}
         </div>
       </section>
     );
