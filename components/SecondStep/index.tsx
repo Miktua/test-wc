@@ -52,7 +52,11 @@ const SecondStep = observer(
           title="Choose which fund the money will go to:"
           values={funds}
         />
-        <Button onClick={onBuyClick} className={styles.button}>
+        <Button
+          disabled={userStore?.selectedFund === null}
+          onClick={onBuyClick}
+          className={styles.button}
+        >
           Go to Purchase
         </Button>
       </div>

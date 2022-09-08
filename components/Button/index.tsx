@@ -7,12 +7,14 @@ function Button({
   children,
   type = "button",
   className,
+  disabled = false,
   ...props
 }: ButtonProps): JSX.Element {
   return (
     <button
       className={classnames(styles.root, className)}
       type={type}
+      disabled={disabled}
       {...props}
     >
       {children}

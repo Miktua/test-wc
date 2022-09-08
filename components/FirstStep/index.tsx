@@ -55,7 +55,9 @@ const FirstStep = observer(
             />
             <p className={styles.currency}>ETH</p>
           </div>
-          <Button type="submit">Buy</Button>
+          <Button disabled={price === undefined} type="submit">
+            Buy
+          </Button>
         </form>
       </div>
     );

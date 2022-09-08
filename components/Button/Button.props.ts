@@ -6,5 +6,6 @@ export interface ButtonProps
     HTMLButtonElement
   > {
   type?: "submit" | "button";
+  disabled?: boolean;
   className?: string;
 }
