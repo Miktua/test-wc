@@ -5,5 +5,7 @@ export interface ButtonProps
     HTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
+  type?: "submit" | "button";
+  disabled?: boolean;
   className?: string;
 }

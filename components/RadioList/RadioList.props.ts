@@ -9,7 +9,7 @@ import { TRadioValue } from "./index";
 export interface RadioListProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   selected: TRadioValue | null;
-  setSelected: Dispatch<SetStateAction<TRadioValue | null>>;
+  setSelected: (item: TRadioValue) => void;
   values: TRadioValue[];
   name: string;
   title: string;

@@ -3,7 +3,7 @@ import { TCity, TSteps } from "../MapBlock";
 
 export interface StepsProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  currentStep: TSteps;
+  currentStep: number;
   selectedCity: TCity | null;
   className?: string;
 }

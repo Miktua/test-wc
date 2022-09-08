@@ -3,11 +3,18 @@ import classnames from "classnames";
 import styles from "./Button.module.scss";
 import { ButtonProps } from "./Button.props";
 
-function Button({ children, className, ...props }: ButtonProps): JSX.Element {
+function Button({
+  children,
+  type = "button",
+  className,
+  disabled = false,
+  ...props
+}: ButtonProps): JSX.Element {
   return (
     <button
       className={classnames(styles.root, className)}
-      type="button"
+      type={type}
+      disabled={disabled}
       {...props}
     >
       {children}
