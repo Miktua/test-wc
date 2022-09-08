@@ -51,6 +51,8 @@
   align-items: center;
   gap: 15px;
 
+  @include states();
+
   &:before {
     content: "";
     height: 22px;

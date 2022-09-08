@@ -1,0 +1,45 @@
+@import "styles/mixins";
+
+.root {
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: row;
+  background: var(--secondary);
+  align-items: center;
+  color: var(--text-primary);
+  font-size: 16px;
+  justify-content: space-between;
+}
+
+.logo {
+  fill: white;
+  //width: 146px;
+  //height: 96px;
+}
+
+.footerMenu {
+  display: flex;
+  justify-content: center;
+  gap: 160px;
+}
+
+.menuBlock, .nestedMenuList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.menuBlockTitle {
+  padding-left: 5px;
+  font-weight: 600;
+  @include fontInter();
+}
+
+.link {
+  @include states();
+  padding: 5px;
+  @include fontInter();
+}

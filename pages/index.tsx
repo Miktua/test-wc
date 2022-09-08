@@ -7,6 +7,7 @@ import { UserStore } from "../stores/UserStore";
 import styles from "../styles/Home.module.scss";
 import Header from "../layout/Header";
 import { HeroBlock, MapBlock } from "../components";
+import Footer from "../layout/Footer";
 
 const Home: NextPage = observer((props) => {
   const store = useInjection(UserStore);
@@ -15,6 +16,7 @@ const Home: NextPage = observer((props) => {
     <div className={classNames(styles.container, styles.main)}>
       <HeroBlock />
       <MapBlock />
+      <Footer />
     </div>
   );
 });

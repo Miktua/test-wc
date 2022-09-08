@@ -23,6 +23,10 @@
   font-family: 'Namu-sixty', sans-serif;
 }
 
+@mixin fontInter() {
+  font-family: 'Inter', sans-serif;
+}
+
 @mixin states() {
   &:hover {
     opacity: 0.7;
