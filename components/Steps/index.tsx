@@ -6,6 +6,7 @@ import styles from "./Steps.module.scss";
 import { StepsProps } from "./Steps.props";
 import { FirstStep, SecondStep, ThirdStep } from "../index";
 import BackIcon from "../../public/images/icons/back.svg";
+import CloseIcon from "../../public/images/icons/close.svg";
 import { UserStore } from "../../stores/UserStore";
 
 const Steps = observer(
@@ -18,7 +19,13 @@ const Steps = observer(
     const userStore = useInjection(UserStore);
 
     const onBackClick = () => {
-      userStore?.decStep();
+      if (userStore?.currentStep !== 3) {
+        userStore?.decStep();
+      } else {
+        userStore?.setStep(0);
+        userStore?.setCity(null);
+        userStore?.setFund(null);
+      }
     };
 
     return (
@@ -33,7 +40,11 @@ const Steps = observer(
           className={styles.backButton}
           type="button"
         >
-          <BackIcon className={styles.backIcon} />
+          {userStore?.currentStep !== 3 ? (
+            <BackIcon className={styles.buttonIcon} />
+          ) : (
+            <CloseIcon className={styles.buttonIcon} />
+          )}
           <span className="visually-hidden">Back</span>
         </button>
         {currentStep === 1 && <FirstStep selectedCity={selectedCity} />}
