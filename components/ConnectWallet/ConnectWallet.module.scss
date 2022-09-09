@@ -7,6 +7,11 @@
   padding: 11px 29px;
   border-radius: 25px;
   @include states();
+  @media (max-width:1000px){
+    width: max-content;
+    padding: 10px 10px 14px;
+    line-height: 20px;
+  }
 }
 
 .connectedRoot {
@@ -24,4 +29,5 @@
 .connectedButton {
   display: flex;
   align-items: center;
+  
 }
