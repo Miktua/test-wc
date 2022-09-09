@@ -5,7 +5,7 @@ import { RootStore } from "./RootStore";
 import { fetchProfile, IFetchProfileResponseData } from "../api/profile";
 import { TCity, TSteps } from "../components/MapBlock";
 import { TRadioValue } from "../components/RadioList";
-import { TFund } from "../components/SecondStep";
+import { IFund, IFunds } from "../components/SecondStep";
 
 @injectable()
 export class UserStore {
@@ -17,7 +17,7 @@ export class UserStore {
 
   @observable price: number | undefined = undefined;
 
-  @observable selectedFund: TFund | null = null;
+  @observable selectedFund: IFund | null = null;
 
   public constructor(private readonly rootStore: RootStore) {
     makeObservable(this);
@@ -54,7 +54,7 @@ export class UserStore {
     this.price = price;
   }
 
-  setFund(fund: TFund | null) {
+  setFund(fund: IFund | null) {
     this.selectedFund = fund;
   }
 }

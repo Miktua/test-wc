@@ -19,8 +19,8 @@ const MapBlock = observer(
 
     const cities: TCity[] = [
       {
-        title: t("cities::Kiyv"),
-        value: "kiyv",
+        title: t("cities::kyiv"),
+        value: "kyiv",
       },
       {
         title: t("cities::Donetsk"),
@@ -46,11 +46,16 @@ const MapBlock = observer(
         />
         {/* )} */}
 
-        <h2 style={{
-          visibility: userStore.currentStep===0? 'visible' : 'hidden',
-          opacity: userStore.currentStep===0? 1 : 0,
-          marginBottom: userStore.currentStep===0? '' : 0
-        }} className={styles.title}>MÁPA MÍST</h2>
+        <h2
+          style={{
+            visibility: userStore.currentStep === 0 ? "visible" : "hidden",
+            opacity: userStore.currentStep === 0 ? 1 : 0,
+            marginBottom: userStore.currentStep === 0 ? "" : 0,
+          }}
+          className={styles.title}
+        >
+          MÁPA MÍST
+        </h2>
         <div className={styles.content}>
           <RadioList
             selected={userStore?.selectedCity}

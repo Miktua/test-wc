@@ -7,4 +7,5 @@ export { default as FirstStep } from "./FirstStep";
 export { default as Button } from "./Button";
 export { default as SecondStep } from "./SecondStep";
 export { default as RadioList } from "./RadioList";
-export { default as ThirdStep } from './ThirdStep'
+export { default as ThirdStep } from "./ThirdStep";
+export { default as FundsList } from "./FundsList";
