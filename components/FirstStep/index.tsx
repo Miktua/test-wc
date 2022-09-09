@@ -23,6 +23,11 @@ interface IText {
   };
 }
 
+export const CityToImage: Record<"kyiv" | "donetsk", string> = {
+  kyiv: "/images/kyiv.jpg",
+  donetsk: "/images/donetsk.jpg",
+};
+
 const FirstStep = observer(
   ({ selectedCity, className, ...props }: FirstStepProps): JSX.Element => {
     const userStore = useInjection(UserStore);
@@ -50,13 +55,22 @@ const FirstStep = observer(
 
     return (
       <div className={classnames(styles.root, className)} {...props}>
-        <Image
-          className={styles.nftImage}
-          src="/images/nft.png"
-          width="612px"
-          height="300px"
-          layout="intrinsic"
-        />
+        {userStore?.selectedCity && (
+          <Image
+            className={styles.nftImage}
+            src={
+              CityToImage[
+                userStore.selectedCity.value as keyof Record<
+                  "kyiv" | "donetsk",
+                  string
+                >
+              ]
+            }
+            width="612px"
+            height="300px"
+            layout="intrinsic"
+          />
+        )}
         <h3 className={styles.cityTitle}>
           {selectedCity?.value &&
             TEXT[selectedCity?.value as keyof IText].title}
