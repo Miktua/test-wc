@@ -1,0 +1,35 @@
+{
+  "header": {
+    "main": "main",
+    "map": "map",
+    "contacts": "contacts",
+    "connectWallet": "Connect wallet"
+  },
+  "hero": {
+    "text": "An Interactive map of Ukraine with the display and the possibility of buying NFT-art, which depicts the main symbols of the largest cities of Independent Ukraine with historical descriptions. We treat history with care, strive for enlightenment, and popularize web3 in our Rídne Misto.\n\nAll money goes to aid funds for Ukraine."
+  },
+  "map": {
+    "select": "Обрати місто:"
+  },
+  "cities": {
+    "Kiyv": "Kiyv",
+    "Donetsk": "Donetsk",
+    "Vinnytsia": "Vinnytsia"
+  },
+  "step1KYiv": {
+    "title": "Independent Kyiv",
+    "mint": "Mint",
+    "text": "Kyiv is the heart of Ukraine. A majestic city where history itself tells you its chronicles. \nFrom the time when three brothers Kiy, Shchek and Khoryv and their sister Lybid founded the city and named it Kyiv, in honor of their older brother, a lot of water has already flowed from the Dnipro. But it is still a city of glory and pride of the entire Ukrainian nation \nIf you have not seen this ancient and at the same time eternally young and modern capital, you should definitely do it. And fall in love with it forever!"
+  },
+  "step1Donetsk": {
+    "title": "Unbreakable Donetsk",
+    "mint": "Mint",
+    "text": "The Wild Fields is a no man’s land. A place near the Kalmius River through which many peoples passed — Cimmerians, Scythians, Sarmatians, Goths, Tatars, Slavs...\nDonetsk was one of the most powerful centers of industry and innovative development. But at the same time it was also a- place of science, art and sports. A city of mines, factories, combines, but also a city of million roses, ballet, football and gymnastics. This is the legacy of the majestic and unconquered Wild Fields."
+  },
+  "step2": {
+    "title": "Choose which fund the money will go to:",
+    "donate": "Donate"
+  },
+  "price": "Price",
+  "thanks": "Thanks for you support"
+}

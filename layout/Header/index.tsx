@@ -1,6 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import { HeaderProps } from "./Header.props";
 import LogoIcon from "../../public/images/icons/logo.svg";

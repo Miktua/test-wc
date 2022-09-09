@@ -7,15 +7,15 @@ import { ConnectWalletProps } from "./ConnectWallet.props";
 import WalletStore from "../../stores/WalletStore";
 import { addressSlice } from "../../utils/helper";
 import CloseIcon from "../../public/images/icons/closeBlack.svg";
+import { useTranslation } from "react-i18next";
 
 const ConnectWallet = observer(
   ({ className, ...props }: ConnectWalletProps): JSX.Element => {
     const walletStore = useInjection(WalletStore);
+    const { t } = useTranslation();
 
     const onConnectWalletClick = () => {
-      walletStore.connectWallet().then(() => {
-        console.log(walletStore?.mint);
-      });
+      walletStore.connectWallet();
     };
 
     const onDisconnectClick = () => {
@@ -31,7 +31,7 @@ const ConnectWallet = observer(
             {...props}
             type="button"
           >
-            Connect Wallet
+            {t("header::connectWallet")}
           </button>
         ) : (
           <div className={styles.connectedRoot}>

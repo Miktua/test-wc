@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 import { Provider } from "inversify-react";
 import { RootStore } from "../stores/RootStore";
 import { ModalsContainer } from "../modals";
-import Layout from "../layout/Layout";
+import "../i18n";
 
 const rootStore = new RootStore();
 const { container } = rootStore;
