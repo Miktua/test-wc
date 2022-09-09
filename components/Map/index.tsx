@@ -49,6 +49,7 @@ const Map = observer((): JSX.Element => {
 		console.log('store?.selectedCity', store?.selectedCity)
 		 gsap.to('.mapa_box', {
 			duration: 1,
+			// @ts-ignore
 			attr: { viewBox: ECities[store.selectedCity.value] },
 			ease: "power3.inOut"
 		  })
