@@ -1265,12 +1265,13 @@ const Map = observer((): JSX.Element => {
 			c-0.2,1.5,0.3,3,1.3,4c1,1,1.5,2.5,1.2,3.9l-0.5,2.4c-0.7,2.8,0.1,5.8,2,8L92.4,92.2z"
           />
         </g>
+		{/* vinnytsia */}
         <g
-          className={classNames(s.group, s.active)}
-          onMouseEnter={() =>
-            cityHover({ title: "Vinnytsia", value: "vinnytsia" })
-          }
-          onClick={() => cityClick({ title: "Vinnytsia", value: "vinnytsia" })}
+          className={classNames(s.group)}
+        //   onMouseEnter={() =>
+        //     cityHover({ title: "Vinnytsia", value: "vinnytsia" })
+        //   }
+        //   onClick={() => cityClick({ title: "Vinnytsia", value: "vinnytsia" })}
           id="_x32_0"
         >
           <path
