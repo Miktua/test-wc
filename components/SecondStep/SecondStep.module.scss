@@ -5,6 +5,9 @@
 .radioList {
   margin-bottom: 30px;
   padding-top: 150px;
+  @media (max-width:1000px){
+    padding: 0;
+  }
 }
 
 .button {

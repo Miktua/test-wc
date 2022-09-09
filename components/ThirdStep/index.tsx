@@ -21,13 +21,12 @@ const ThirdStep = observer(
     };
     return (
       <div className={classnames(styles.root, className)} {...props}>
-        <Image
-          className={styles.nftImage}
-          src="/images/nft.png"
-          width="751px"
-          height="368px"
-          layout="fixed"
-        />
+          <img
+            className={styles.nftImage}
+            src="/images/nft.png"
+            alt="nft"
+          />
+        
         <h3 className={styles.cityTitle}>
           {selectedCity?.value && selectedCity.value === "kyiv"
             ? t("step1KYiv::title")

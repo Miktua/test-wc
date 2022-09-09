@@ -40,10 +40,7 @@ const MapBlock = observer(
     return (
       <section className={classnames(styles.root, className)} {...props}>
         {/* {userStore?.currentStep !== 0 && ( */}
-        <Steps
-          currentStep={userStore?.currentStep}
-          selectedCity={userStore?.selectedCity}
-        />
+       
         {/* )} */}
 
         <h2
