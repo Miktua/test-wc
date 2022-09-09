@@ -34,7 +34,8 @@ const Steps = observer(
     return (
       <div
         style={{
-          left: currentStep === 0? '-60vw' : ''
+          left: currentStep === 0? '-60vw' : '',
+          visibility: currentStep === 0? 'hidden' : 'visible'
         }}
         className={classnames(styles.root, className, {
           [styles.fullScreen]: currentStep === 3,
