@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classnames from "classnames";
 import { useInjection } from "inversify-react";
 import { observer } from "mobx-react";
@@ -6,9 +6,11 @@ import { toWei } from "web3-utils";
 import { useTranslation } from "react-i18next";
 import styles from "./SecondStep.module.scss";
 import { SecondStepProps } from "./SecondStep.props";
-import { Button, FundsList } from "../index";
+import { Button, FundsList, Loader } from "../index";
 import { UserStore } from "../../stores/UserStore";
 import WalletStore from "../../stores/WalletStore";
+import { IDataLoadingStatus } from "../../utils/utilities";
+import { toast } from "react-toastify";
 
 export interface IFunds {
   kyiv: IFund[];
@@ -22,6 +24,9 @@ const SecondStep = observer(
     const userStore = useInjection(UserStore);
     const { t } = useTranslation();
     const walletStore = useInjection(WalletStore);
+
+    const [dataLoadingStatus, setDataLoadingStatus] =
+      useState<IDataLoadingStatus>(null);
 
     const FUNDS: IFunds = {
       kyiv: [
@@ -87,35 +92,47 @@ const SecondStep = observer(
         return;
       }
 
+      setDataLoadingStatus("LOADING");
+
       walletStore?.mint?.methods
-        .mint("2", "0xa1b1bbB8070Df2450810b8eB2425D543cfCeF79b")
+        .mint("1", "0x62F650c0eE84E3a1998A2EEe042a12D9E9728843")
         .send({
           from: walletStore.user.wallet,
           value: toWei(userStore.price.toString()),
+        })
+        .then(() => {
+          userStore?.incStep();
+          setDataLoadingStatus("LOADED");
+        })
+        .catch(() => {
+          toast.error("Unexpected error");
+          setDataLoadingStatus("ERROR");
         });
-      userStore?.incStep();
     };
 
     return (
-      <div className={classnames(styles.root, className)} {...props}>
-        {userStore?.selectedCity && (
-          <FundsList
-            className={styles.radioList}
-            title={t("step2::title")}
-            funds={FUNDS[userStore.selectedCity.value as keyof IFunds]}
-            name="funds"
-            selectedFund={userStore.selectedFund}
-            setSelected={(fund: IFund) => onFundSelect(fund)}
-          />
-        )}
-        <Button
-          disabled={userStore?.selectedFund === null}
-          onClick={onBuyClick}
-          className={styles.button}
-        >
-          {t("step2::donate")}
-        </Button>
-      </div>
+      <>
+        <Loader dataLoadingStatus={dataLoadingStatus} />
+        <div className={classnames(styles.root, className)} {...props}>
+          {userStore?.selectedCity && (
+            <FundsList
+              className={styles.radioList}
+              title={t("step2::title")}
+              funds={FUNDS[userStore.selectedCity.value as keyof IFunds]}
+              name="funds"
+              selectedFund={userStore.selectedFund}
+              setSelected={(fund: IFund) => onFundSelect(fund)}
+            />
+          )}
+          <Button
+            disabled={userStore?.selectedFund === null}
+            onClick={onBuyClick}
+            className={styles.button}
+          >
+            {t("step2::donate")}
+          </Button>
+        </div>
+      </>
     );
   }
 );

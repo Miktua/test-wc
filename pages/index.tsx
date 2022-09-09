@@ -1,12 +1,10 @@
 import React from "react";
-import classNames from "classnames";
 import { useInjection } from "inversify-react";
 import { observer } from "mobx-react";
 import type { NextPage } from "next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper";
 import { UserStore } from "../stores/UserStore";
-import styles from "../styles/Home.module.scss";
 import { HeroBlock, MapBlock } from "../components";
 import Footer from "../layout/Footer";
 import "swiper/css";

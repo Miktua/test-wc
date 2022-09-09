@@ -1,0 +1,35 @@
+.root {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.dots {
+  width: 88px;
+  height: 21.1px;
+  background: radial-gradient(circle closest-side at left 10.6px top 50%,#fae992 90%,#0000),
+  radial-gradient(circle closest-side, #fae992 90%,#0000),
+  radial-gradient(circle closest-side at right 10.6px top 50%,#fae992 90%,#0000);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  animation: dots-xm0185hg 1.2s infinite alternate;
+  margin: auto;
+}
+
+@keyframes dots-xm0185hg {
+  to {
+    width: 35.2px;
+    height: 42.2px;
+  }
+}

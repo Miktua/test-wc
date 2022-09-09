@@ -3,7 +3,7 @@
 .root {
   position: relative;
   height: 100vh;
-  min-height: 800px;
+  //min-height: 800px;
   padding: 60px 50px 80px 80px;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
 .title {
   @include textGradient();
   @include fontZero();
-  margin: 0 auto 90px;
+  margin: 0 auto 10px;
   transition: all .3s ease-in-out;
   @media (max-width:1000px){
     font-size: 50px;
