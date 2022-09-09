@@ -12,7 +12,7 @@
     "select": "Обрати місто:"
   },
   "cities": {
-    "Kiyv": "Kiyv",
+    "kyiv": "Kyiv",
     "Donetsk": "Donetsk",
     "Vinnytsia": "Vinnytsia"
   },
