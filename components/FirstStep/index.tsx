@@ -3,12 +3,12 @@ import classnames from "classnames";
 import Image from "next/image";
 import { observer } from "mobx-react";
 import { useInjection } from "inversify-react";
+import { useTranslation } from "react-i18next";
 import styles from "./FirstStep.module.scss";
 import { FirstStepProps } from "./FirstStep.props";
 import { Button } from "../index";
 import EthIcon from "../../public/images/icons/eth.svg";
 import { UserStore } from "../../stores/UserStore";
-import { useTranslation } from "react-i18next";
 
 interface IText {
   kyiv: {
@@ -53,9 +53,9 @@ const FirstStep = observer(
         <Image
           className={styles.nftImage}
           src="/images/nft.png"
-          width="751px"
-          height="368px"
-          layout="fixed"
+          width="612px"
+          height="300px"
+          layout="intrinsic"
         />
         <h3 className={styles.cityTitle}>
           {selectedCity?.value &&
