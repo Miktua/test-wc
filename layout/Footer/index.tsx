@@ -13,10 +13,17 @@ function Footer({ className, ...props }: FooterProps): JSX.Element {
           <p className={styles.menuBlockTitle}>Support</p>
           <ul className={styles.nestedMenuList}>
             <li className={styles.menuItem}>
-              <a className={styles.link}>Contacts</a>
+              <a href="https://adev.co/#footer" className={styles.link}>
+                Contacts
+              </a>
             </li>
             <li className={styles.menuItem}>
-              <a className={styles.link}>FAQs</a>
+              <a
+                href="https://calendly.com/another-dev"
+                className={styles.link}
+              >
+                FAQs
+              </a>
             </li>
           </ul>
         </li>
@@ -24,10 +31,14 @@ function Footer({ className, ...props }: FooterProps): JSX.Element {
           <p className={styles.menuBlockTitle}>Company</p>
           <ul className={styles.nestedMenuList}>
             <li className={styles.menuItem}>
-              <a className={styles.link}>About</a>
+              <a href="https://adev.co/" className={styles.link}>
+                About
+              </a>
             </li>
             <li className={styles.menuItem}>
-              <a className={styles.link}>Templates</a>
+              <a href="https://adev.co/#projects" className={styles.link}>
+                Projects
+              </a>
             </li>
           </ul>
         </li>
@@ -35,10 +46,14 @@ function Footer({ className, ...props }: FooterProps): JSX.Element {
           <p className={styles.menuBlockTitle}>Join us</p>
           <ul className={styles.nestedMenuList}>
             <li className={styles.menuItem}>
-              <a className={styles.link}>Discord</a>
+              <a href="https://discord.gg/F5Wq6572" className={styles.link}>
+                Discord
+              </a>
             </li>
             <li className={styles.menuItem}>
-              <a className={styles.link}>Twitter</a>
+              <a href="https://twitter.com/another_pif" className={styles.link}>
+                Twitter
+              </a>
             </li>
           </ul>
         </li>
