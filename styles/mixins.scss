@@ -1,7 +1,7 @@
 @import "fonts.scss";
 
 @mixin textGradient() {
-  background: linear-gradient(180deg, #FAE992 19.7%, #74C1EF 100%);
+  background: linear-gradient(180deg, #74C1EF 19.7%, #FAE992 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
