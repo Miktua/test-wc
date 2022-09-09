@@ -8,6 +8,7 @@ import { ThirdStepProps } from "./ThirdStep.props";
 import { Button } from "../index";
 import { UserStore } from "../../stores/UserStore";
 import { useTranslation } from "react-i18next";
+import { CityToImage } from "../FirstStep";
 
 const ThirdStep = observer(
   ({ selectedCity, className, ...props }: ThirdStepProps): JSX.Element => {
@@ -21,12 +22,22 @@ const ThirdStep = observer(
     };
     return (
       <div className={classnames(styles.root, className)} {...props}>
-          <img
+        {userStore?.selectedCity && (
+          <Image
             className={styles.nftImage}
-            src="/images/nft.png"
-            alt="nft"
+            src={
+              CityToImage[
+                userStore.selectedCity.value as keyof Record<
+                  "kyiv" | "donetsk",
+                  string
+                >
+              ]
+            }
+            width="751px"
+            height="368px"
+            layout="fixed"
           />
-        
+        )}
         <h3 className={styles.cityTitle}>
           {selectedCity?.value && selectedCity.value === "kyiv"
             ? t("step1KYiv::title")

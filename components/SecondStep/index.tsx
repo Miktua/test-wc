@@ -4,18 +4,23 @@ import { useInjection } from "inversify-react";
 import { observer } from "mobx-react";
 import { toWei } from "web3-utils";
 import { useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
 import styles from "./SecondStep.module.scss";
 import { SecondStepProps } from "./SecondStep.props";
 import { Button, FundsList, Loader } from "../index";
 import { UserStore } from "../../stores/UserStore";
 import WalletStore from "../../stores/WalletStore";
 import { IDataLoadingStatus } from "../../utils/utilities";
-import { toast } from "react-toastify";
 
 export interface IFunds {
   kyiv: IFund[];
   donetsk: IFund[];
 }
+
+const CityToIndex: Record<"kyiv" | "donetsk", string> = {
+  kyiv: "1",
+  donetsk: "2",
+};
 
 export type IFund = Record<"name" | "address" | "description" | "link", string>;
 
@@ -88,7 +93,11 @@ const SecondStep = observer(
     };
 
     const onBuyClick = async () => {
-      if (!userStore?.price) {
+      if (
+        !userStore?.price ||
+        !userStore?.selectedCity ||
+        !userStore?.selectedFund?.address
+      ) {
         return;
       }
 
@@ -98,8 +107,16 @@ const SecondStep = observer(
 
       setDataLoadingStatus("LOADING");
 
+      const cityIndex =
+        CityToIndex[
+          userStore.selectedCity.value as keyof Record<
+            "kyiv" | "donetsk",
+            string
+          >
+        ];
+
       await walletStore?.mint?.methods
-        .mint("1", "0x62F650c0eE84E3a1998A2EEe042a12D9E9728843")
+        .mint(cityIndex, userStore.selectedFund.address)
         .send({
           from: walletStore.user.wallet,
           value: toWei(userStore.price.toString()),

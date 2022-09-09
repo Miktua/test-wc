@@ -18,8 +18,8 @@ function Header({ className, ...props }: HeaderProps): JSX.Element {
       </Link>
       <NavBar className={styles.navBar} />
       <div className={styles.buttons}>
-        <Language />
         <ConnectWallet />
+        <Language />
       </div>
     </header>
   );
