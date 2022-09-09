@@ -7,6 +7,9 @@
   align-items: center;
   color: var(--header-text);
   z-index: 11;
+  @media (max-width:1000px){
+    width: 100%;
+  }
 }
 
 .logoLink {
@@ -24,4 +27,7 @@
   margin-left: -50px;
   width: 100px;
   height: 100px;
+  @media (max-width:1000px){
+    top: 130%;
+  }
 }

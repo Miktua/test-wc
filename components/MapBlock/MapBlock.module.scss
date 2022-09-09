@@ -8,6 +8,10 @@
   display: flex;
   flex-direction: column;
   background: var(--main);
+  @media (max-width:1000px){
+    padding: 30px 15px 40px;
+    
+  }
 }
 
 .title {
@@ -15,10 +19,20 @@
   @include fontZero();
   margin: 0 auto 90px;
   transition: all .3s ease-in-out;
+  @media (max-width:1000px){
+    font-size: 50px;
+    margin: 0 auto;
+  }
 }
 
 .content {
   display: flex;
   gap: 70px;
+  @media (max-width:1000px){
+    flex-grow: 3;
+    flex-direction: column-reverse;
+    gap: 20px
+  }
+
 }
 
