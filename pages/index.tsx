@@ -15,30 +15,28 @@ const Home: NextPage = observer(() => {
   const userStore = useInjection(UserStore);
 
   return (
-    <>
-    {/* // <Swiper
-    //   className="mySwiper"
-    //   direction="vertical"
-    //   mousewheel={{ sensitivity: 1 }}
-    //   slidesPerView={1}
-    //   observer
-    //   observeParents
-    //   modules={[Mousewheel]}
-    //   speed={800}
-    //   allowSlideNext={userStore?.currentStep === 0}
-    //   allowSlidePrev={userStore?.currentStep === 0}
-    // > */}
-      {/* // <SwiperSlide> */}
+    <Swiper
+      className="mySwiper"
+      direction="vertical"
+      mousewheel={{ sensitivity: 1 }}
+      slidesPerView={1}
+      observer
+      observeParents
+      modules={[Mousewheel]}
+      speed={800}
+      allowSlideNext={userStore?.currentStep === 0}
+      allowSlidePrev={userStore?.currentStep === 0}
+    >
+      <SwiperSlide>
         <HeroBlock />
-      {/* </SwiperSlide> */}
-      {/* // <SwiperSlide> */}
+      </SwiperSlide>
+      <SwiperSlide>
         <MapBlock />
-      {/* </SwiperSlide> */}
-      {/* // <SwiperSlide> */}
+      </SwiperSlide>
+      <SwiperSlide>
         <Footer />
-      {/* </SwiperSlide> */}
-    {/* // </Swiper> */}
-    </>
+      </SwiperSlide>
+    </Swiper>
   );
 });
 
