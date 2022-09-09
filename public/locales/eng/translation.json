@@ -53,5 +53,13 @@
       "title": "Tbilisi Volunteers",
       "description": "\"Tbilisi Volunteers\" help tUkrainian refugees ended up in Georgia get medicines, medical care, temporary housing and information"
     }
+  },
+  "footer": {
+    "support": "Support",
+    "contacts": "Contacts",
+    "company": "Company",
+    "about": "About",
+    "projects": "Projects",
+    "join": "Join us"
   }
 }
