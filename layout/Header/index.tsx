@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import styles from "./Header.module.scss";
 import { HeaderProps } from "./Header.props";
 import LogoIcon from "../../public/images/icons/logo.svg";
-import { ConnectWallet, NavBar } from "../../components";
+import { ConnectWallet, Language, NavBar } from "../../components";
 
 function Header({ className, ...props }: HeaderProps): JSX.Element {
   return (
@@ -17,7 +17,10 @@ function Header({ className, ...props }: HeaderProps): JSX.Element {
         </a>
       </Link>
       <NavBar className={styles.navBar} />
-      <ConnectWallet />
+      <div className={styles.buttons}>
+        <Language />
+        <ConnectWallet />
+      </div>
     </header>
   );
 }

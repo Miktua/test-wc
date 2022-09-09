@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { UserStore } from "../../stores/UserStore";
 import { TCity } from "../MapBlock";
 import s from "./map.module.sass";
+import { useTranslation } from "react-i18next";
 
 const st0 = { fill: "#1D1D1D", stroke: "#FFFFFF", strokeWidth: 0.4473 };
 const st1 = { fill: "#FFFFFF", filter: "url(#Adobe_OpacityMaskFilter)" };
@@ -31,6 +32,7 @@ enum ECities {
 }
 const Map = observer((): JSX.Element => {
   const store = useInjection(UserStore);
+  const { t } = useTranslation();
   const [viewbox, setVIew] = useState(ECities.default);
   //
   //   const refKyiv = useRef<HTMLDivElement>(null)
@@ -615,7 +617,7 @@ const Map = observer((): JSX.Element => {
             transform="matrix(1 0 0 1 443.4633 114.3755)"
             className={classNames(s.text, s.kyiv)}
           >
-            Kyiv
+            {t("cities::kyiv")}
           </text>
           <g>
             <circle
@@ -1265,13 +1267,13 @@ const Map = observer((): JSX.Element => {
 			c-0.2,1.5,0.3,3,1.3,4c1,1,1.5,2.5,1.2,3.9l-0.5,2.4c-0.7,2.8,0.1,5.8,2,8L92.4,92.2z"
           />
         </g>
-		{/* vinnytsia */}
+        {/* vinnytsia */}
         <g
           className={classNames(s.group)}
-        //   onMouseEnter={() =>
-        //     cityHover({ title: "Vinnytsia", value: "vinnytsia" })
-        //   }
-        //   onClick={() => cityClick({ title: "Vinnytsia", value: "vinnytsia" })}
+          //   onMouseEnter={() =>
+          //     cityHover({ title: "Vinnytsia", value: "vinnytsia" })
+          //   }
+          //   onClick={() => cityClick({ title: "Vinnytsia", value: "vinnytsia" })}
           id="_x32_0"
         >
           <path
@@ -1315,7 +1317,7 @@ const Map = observer((): JSX.Element => {
             transform="matrix(1 0 0 1 314.5903 241.0865)"
             className={classNames(s.text, s.vinnytsia)}
           >
-            Vinnytsia
+            {t("cities::Vinnytsia")}
           </text>
           <g>
             <circle style={st5} cx="387.8" cy="280.5" r="6.6" />
@@ -2375,7 +2377,7 @@ const Map = observer((): JSX.Element => {
               transform="matrix(1 0 0 1 843.7566 304.2521)"
               className={classNames(s.text, s.donetsk)}
             >
-              Donetsk
+              {t("cities::Donetsk")}
             </text>
           </g>
           <g>

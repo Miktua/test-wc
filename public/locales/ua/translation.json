@@ -12,9 +12,9 @@
     "select": "Select city location:"
   },
   "cities": {
-    "kyiv": "kyiv",
-    "Donetsk": "Donetsk",
-    "Vinnytsia": "Vinnytsia"
+    "kyiv": "Київ",
+    "Donetsk": "Донецьк",
+    "Vinnytsia": "Вінница"
   },
   "step1KYiv": {
     "title": "Heзалежний Київ",
