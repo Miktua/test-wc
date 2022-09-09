@@ -29,7 +29,7 @@ const ThirdStep = observer(
           layout="fixed"
         />
         <h3 className={styles.cityTitle}>
-          {selectedCity?.value && selectedCity.value === "kiyv"
+          {selectedCity?.value && selectedCity.value === "kyiv"
             ? t("step1KYiv::title")
             : t("step1Donetsk::title")}
         </h3>

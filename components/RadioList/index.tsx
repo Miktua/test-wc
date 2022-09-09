@@ -27,7 +27,12 @@ function RadioList({
       <p className={styles.actionTitle}>{title}</p>
       <ul className={styles.list}>
         {values.map((item) => (
-          <li className={styles.item} key={item.value}>
+          <li
+            className={classnames(styles.item, {
+              [styles.itemDisabled]: item?.value.toLowerCase() === "vinnytsia",
+            })}
+            key={item.value}
+          >
             <input
               className={classnames(styles.itemRadio, "visually-hidden")}
               id={item.value}
@@ -35,6 +40,7 @@ function RadioList({
               name={name}
               checked={selected?.value === item.value}
               onChange={() => setSelected(item)}
+              disabled={item?.value.toLowerCase() === "vinnytsia"}
               // onClick={() => setSelected(item)}
             />
             <label
