@@ -5,6 +5,9 @@
   flex-direction: column;
   gap: 32px;
   padding-top: 100px;
+  @media (max-width:1000px){
+  padding: 0;
+  }
 }
 
 .actionTitle {
@@ -12,12 +15,18 @@
   font-size: 25px;
   line-height: 31px;
   @include fontSixty();
+  @media (max-width:1000px){
+
+  }
 }
 
 .list {
   display: flex;
   flex-direction: column;
   gap: 22px;
+  @media (max-width:1000px){
+    gap: 5px;
+  }
 }
 
 .itemLabel {
@@ -52,6 +61,11 @@
     background: var(--accent);
     border-radius: 50%;
     //margin-top: 10px;
+  }
+
+  @media (max-width:1000px){
+    font-size: 30px;
+    padding: 0;
   }
 }
 
