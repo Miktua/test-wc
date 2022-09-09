@@ -11,7 +11,7 @@ import { UserStore } from "../../stores/UserStore";
 import { useTranslation } from "react-i18next";
 
 interface IText {
-  kiyv: {
+  kyiv: {
     title: string;
     mint: string;
     text: string;
@@ -36,7 +36,7 @@ const FirstStep = observer(
     };
 
     const TEXT: IText = {
-      kiyv: {
+      kyiv: {
         title: t("step1KYiv::title"),
         mint: t("step1KYiv::mint"),
         text: t("step1KYiv::text"),

@@ -20,7 +20,7 @@ const MapBlock = observer(
     const cities: TCity[] = [
       {
         title: t("cities::Kiyv"),
-        value: "kiyv",
+        value: "kyiv",
       },
       {
         title: t("cities::Donetsk"),
