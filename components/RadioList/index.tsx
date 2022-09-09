@@ -35,6 +35,7 @@ function RadioList({
               name={name}
               checked={selected?.value === item.value}
               onChange={() => setSelected(item)}
+              // onClick={() => setSelected(item)}
             />
             <label
               className={styles.itemLabel}

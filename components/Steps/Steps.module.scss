@@ -11,8 +11,16 @@
   background-color: var(--main);
   padding: 30px 80px 110px 80px;
   color: var(--text-primary);
+  transition: all .3s ease-in-out;
+  box-shadow: 0 0 40px 50px var(--main)
 }
-
+.mapHider{
+  position: absolute;
+  top:0;
+  right:-50vw;
+  width: 50vw;
+  height: 100vh;
+}
 .buttonIcon {
   display: flex;
   align-items: center;

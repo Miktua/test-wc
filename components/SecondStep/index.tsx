@@ -6,12 +6,14 @@ import styles from "./SecondStep.module.scss";
 import { SecondStepProps } from "./SecondStep.props";
 import { Button, RadioList } from "../index";
 import { UserStore } from "../../stores/UserStore";
+import { useTranslation } from "react-i18next";
 
 export type TFund = Record<"title" | "value", string>;
 
 const SecondStep = observer(
   ({ className, ...props }: SecondStepProps): JSX.Element => {
     const userStore = useInjection(UserStore);
+    const { t } = useTranslation();
 
     const funds: TFund[] = [
       {
@@ -49,7 +51,7 @@ const SecondStep = observer(
           selected={userStore?.selectedFund}
           setSelected={onFundSelect}
           name="fund"
-          title="Choose which fund the money will go to:"
+          title={t("step2::title")}
           values={funds}
         />
         <Button
@@ -57,7 +59,7 @@ const SecondStep = observer(
           onClick={onBuyClick}
           className={styles.button}
         >
-          Go to Purchase
+          {t("step2::donate")}
         </Button>
       </div>
     );
