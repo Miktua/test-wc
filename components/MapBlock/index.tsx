@@ -47,7 +47,8 @@ const MapBlock = observer(
 
         <h2 style={{
           visibility: userStore.currentStep===0? 'visible' : 'hidden',
-          opacity: userStore.currentStep===0? 1 : 0
+          opacity: userStore.currentStep===0? 1 : 0,
+          marginBottom: userStore.currentStep===0? '' : 0
         }} className={styles.title}>MÁPA MÍST</h2>
         <div className={styles.content}>
           <RadioList

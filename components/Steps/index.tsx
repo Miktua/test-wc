@@ -41,6 +41,7 @@ const Steps = observer(
         })}
         {...props}
       >
+        {currentStep!==0&&<div className={styles.mapHider} onClick={onBackClick} />}
         <button
           onClick={onBackClick}
           className={styles.backButton}
