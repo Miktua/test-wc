@@ -87,14 +87,18 @@ const SecondStep = observer(
       userStore?.setFund(fund);
     };
 
-    const onBuyClick = () => {
-      if (!walletStore?.user?.wallet || !userStore?.price) {
+    const onBuyClick = async () => {
+      if (!userStore?.price) {
         return;
+      }
+
+      if (!walletStore?.user?.wallet) {
+        await walletStore?.connectWallet();
       }
 
       setDataLoadingStatus("LOADING");
 
-      walletStore?.mint?.methods
+      await walletStore?.mint?.methods
         .mint("1", "0x62F650c0eE84E3a1998A2EEe042a12D9E9728843")
         .send({
           from: walletStore.user.wallet,
