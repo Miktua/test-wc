@@ -8,16 +8,44 @@ import { FirstStepProps } from "./FirstStep.props";
 import { Button } from "../index";
 import EthIcon from "../../public/images/icons/eth.svg";
 import { UserStore } from "../../stores/UserStore";
+import { useTranslation } from "react-i18next";
+
+interface IText {
+  kiyv: {
+    title: string;
+    mint: string;
+    text: string;
+  };
+  donetsk: {
+    title: string;
+    mint: string;
+    text: string;
+  };
+}
 
 const FirstStep = observer(
   ({ selectedCity, className, ...props }: FirstStepProps): JSX.Element => {
     const userStore = useInjection(UserStore);
+    const { t } = useTranslation();
 
     const [price, setPrice] = useState<number | undefined>();
 
     const onPriceSubmit = () => {
       userStore?.setPrice(price);
       userStore?.incStep();
+    };
+
+    const TEXT: IText = {
+      kiyv: {
+        title: t("step1KYiv::title"),
+        mint: t("step1KYiv::mint"),
+        text: t("step1KYiv::text"),
+      },
+      donetsk: {
+        title: t("step1Donetsk::title"),
+        mint: t("step1Donetsk::mint"),
+        text: t("step1Donetsk::text"),
+      },
     };
 
     return (
@@ -29,15 +57,16 @@ const FirstStep = observer(
           height="368px"
           layout="fixed"
         />
-        <h3 className={styles.cityTitle}>Independent {selectedCity?.title}</h3>
+        <h3 className={styles.cityTitle}>
+          {selectedCity?.value &&
+            TEXT[selectedCity?.value as keyof IText].title}
+        </h3>
         <p className={styles.description}>
-          Київ – серце України. Величне місто, де сама історія переказує вам
-          свої літописи. З часів, коли наприкінці V - початку VI ст. нашої ери
-          три брати Кий, Щек і Хорив та їх сестра Либідь{" "}
+          {selectedCity?.value && TEXT[selectedCity?.value as keyof IText].text}
         </p>
         <form className={styles.form} onSubmit={onPriceSubmit}>
           <label className={styles.label} htmlFor="price" id="price">
-            Price
+            {t("price")}
           </label>
           <div className={styles.inputContainer}>
             <EthIcon className={styles.ethIcon} />
@@ -56,7 +85,8 @@ const FirstStep = observer(
             <p className={styles.currency}>ETH</p>
           </div>
           <Button disabled={price === undefined} type="submit">
-            Buy
+            {selectedCity?.value &&
+              TEXT[selectedCity?.value as keyof IText].mint}
           </Button>
         </form>
       </div>

@@ -7,10 +7,13 @@ import styles from "./ThirdStep.module.scss";
 import { ThirdStepProps } from "./ThirdStep.props";
 import { Button } from "../index";
 import { UserStore } from "../../stores/UserStore";
+import { useTranslation } from "react-i18next";
 
 const ThirdStep = observer(
   ({ selectedCity, className, ...props }: ThirdStepProps): JSX.Element => {
     const userStore = useInjection(UserStore);
+    const { t } = useTranslation();
+
     const onButtonClick = () => {
       userStore?.setStep(0);
       userStore?.setCity(null);
@@ -25,9 +28,13 @@ const ThirdStep = observer(
           height="368px"
           layout="fixed"
         />
-        <h3 className={styles.cityTitle}>Independent {selectedCity?.value}</h3>
+        <h3 className={styles.cityTitle}>
+          {selectedCity?.value && selectedCity.value === "kiyv"
+            ? t("step1KYiv::title")
+            : t("step1Donetsk::title")}
+        </h3>
         <Button onClick={onButtonClick} className={styles.button}>
-          Thanks for you support
+          {t("thanks")}
         </Button>
       </div>
     );

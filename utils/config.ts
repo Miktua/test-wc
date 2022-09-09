@@ -1,10 +1,19 @@
-export const CHAIN_ID = +(process.env.NEXT_PUBLIC_CHAIN_ID || 4)
-export const PROVIDER_ETH = 'https://rinkeby.infura.io/v3/';
-export const baseURL = 'https://backend.do.bykollab.com'
+import { AbiItem } from "web3-utils";
+import mintAbi from "../abi/abi.json";
 
+export const NET_ID = 5;
+export const CHAIN_ID = "0x5";
+export const PROVIDER_ETH =
+  "https://goerli.infura.io/v3/66464a5382084773b10e288211f7c10e";
+export const baseURL = "https://backend.do.bykollab.com";
 
 export const NETWORKS = {
-    "4": PROVIDER_ETH,
-    "56": "https://bsc-dataseed.binance.org/",
-    "97": "https://bsc-dataseed.binance.org/"
-}
+  "5": PROVIDER_ETH,
+};
+
+export const CONTRACTS = {
+  MINT: {
+    abi: mintAbi as AbiItem[],
+    address: "0x1524ba7e794eeD7249fA993b33B30C8A1619e42A",
+  },
+};
