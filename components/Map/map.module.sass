@@ -25,7 +25,8 @@
     transition: all .3s ease-in-out
     
     .group
-        cursor: pointer
+        &.active
+            cursor: pointer
         &:hover
             path
                 fill: #7c7c7c2f !important
@@ -52,3 +53,5 @@
             fill:#FAE992
             font-size:32px
             top: -220px
+            &.vinnytsia
+                opacity: 0.3

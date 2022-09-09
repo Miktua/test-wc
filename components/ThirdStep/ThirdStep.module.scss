@@ -7,8 +7,17 @@
   flex-direction: column;
   gap: 32px;
   justify-content: center;
-}
 
+}
+.nftImage{
+  width: 751px;
+  height: 368px;
+  position: relative;
+  @media (max-width:1000px){
+    width: 100%;
+    height: auto;
+  }
+}
 .cityTitle {
   font-size: 40px;
   line-height: 48px;
