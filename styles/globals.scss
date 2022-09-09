@@ -17,6 +17,8 @@
 #__next, html, body {
   height: 100%;
   position: relative;
+	-webkit-tap-highlight-color: transparent
+
 }
 
 html * {

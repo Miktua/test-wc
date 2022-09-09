@@ -32,33 +32,36 @@ const Steps = observer(
     };
 
     return (
-      <div
-        style={{
-          left: currentStep === 0? '-60vw' : '',
-          visibility: currentStep === 0? 'hidden' : 'visible'
-        }}
-        className={classnames(styles.root, className, {
-          [styles.fullScreen]: currentStep === 3,
-        })}
-        {...props}
-      >
+      <>
         {currentStep!==0&&<div className={styles.mapHider} onClick={onBackClick} />}
-        <button
-          onClick={onBackClick}
-          className={styles.backButton}
-          type="button"
+        <div
+          style={{
+            left: currentStep === 0? '-60vw' : '',
+            visibility: currentStep === 0? 'hidden' : 'visible'
+          }}
+          className={classnames(styles.root, className, {
+            [styles.fullScreen]: currentStep === 3,
+          })}
+          {...props}
         >
-          {userStore?.currentStep !== 3 ? (
-            <BackIcon className={styles.buttonIcon} />
-          ) : (
-            <CloseIcon className={styles.buttonIcon} />
-          )}
-          <span className="visually-hidden">Back</span>
-        </button>
-        {currentStep === 1 && <FirstStep selectedCity={selectedCity} />}
-        {currentStep === 2 && <SecondStep />}
-        {currentStep === 3 && <ThirdStep selectedCity={selectedCity} />}
-      </div>
+          <button
+            onClick={onBackClick}
+            className={styles.backButton}
+            type="button"
+          >
+            {userStore?.currentStep !== 3 ? (
+              <BackIcon className={styles.buttonIcon} />
+            ) : (
+              <CloseIcon className={styles.buttonIcon} />
+            )}
+            <span className="visually-hidden">Back</span>
+          </button>
+          {currentStep === 1 && <FirstStep selectedCity={selectedCity} />}
+          {currentStep === 2 && <SecondStep />}
+          {currentStep === 3 && <ThirdStep selectedCity={selectedCity} />}
+        </div>
+      </>
+      
     );
   }
 );
