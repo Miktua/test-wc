@@ -9,17 +9,17 @@ import { ConnectWallet, Language, NavBar } from "../../components";
 
 function Header({ className, ...props }: HeaderProps): JSX.Element {
   return (
-    <header className={classnames(styles.root)} {...props}>
-      <Link href="/">
+    <header >
+      {/* <Link href="/">
         <a className={styles.logoLink}>
           <LogoIcon className={styles.logoIcon} />
-          <span className="visually-hidden">Ridne Misto</span>
+          <span className="visually-hidden">Test</span>
         </a>
       </Link>
-      <NavBar className={styles.navBar} />
+      <NavBar className={styles.navBar} /> */}
       <div className={styles.buttons}>
         <ConnectWallet />
-        <Language />
+        {/* <Language /> */}
       </div>
     </header>
   );

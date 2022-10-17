@@ -10,34 +10,34 @@
     padding: 25px 15px 110px;
     gap: 100px
   }
-  &:before {
-    position: absolute;
-    content: '';
-    background-image: url("/images/heroBg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    min-height: 800px;
-    z-index: 0;
-  }
+  // &:before {
+  //   position: absolute;
+  //   content: '';
+  //   background-image: url("/images/heroBg.png");
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   min-height: 800px;
+  //   z-index: 0;
+  // }
 
-  &:after {
-    position: absolute;
-    content: '';
-    background-image: url("/images/noise.webp");
-    background-size: cover;
-    background-repeat: repeat;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    min-height: 800px;
-    opacity: 0.4;
-    z-index: 1;
-  }
+  // &:after {
+  //   position: absolute;
+  //   content: '';
+  //   background-image: url("/images/noise.webp");
+  //   background-size: cover;
+  //   background-repeat: repeat;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100vw;
+  //   height: 100vh;
+  //   min-height: 800px;
+  //   opacity: 0.4;
+  //   z-index: 1;
+  // }
 }
 
 .header {

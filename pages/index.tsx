@@ -14,7 +14,9 @@ const Home: NextPage = observer(() => {
 
   return (
     <>
-    
+        <HeroBlock />
+
+{/*     
     <Swiper
       className="mySwiper"
       direction="vertical"
@@ -41,7 +43,7 @@ const Home: NextPage = observer(() => {
     <Steps
     currentStep={userStore?.currentStep}
     selectedCity={userStore?.selectedCity}
-    />
+    /> */}
 
     </>
 
